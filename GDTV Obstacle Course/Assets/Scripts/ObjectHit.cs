@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class ObjectHit : MonoBehaviour
 {
+
+    MeshRenderer obRender;
+
+
+    private void Start()
+    {
+        obRender = GetComponent<MeshRenderer>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<MeshRenderer>().material.color = Color.red;
+        if (collision.gameObject.tag == "Player")
+        {
+            obRender.material.color = Color.red;
+            gameObject.tag = "Hit";
+        }
     }
 }

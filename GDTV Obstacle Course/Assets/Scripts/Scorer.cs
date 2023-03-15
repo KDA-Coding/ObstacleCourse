@@ -10,7 +10,7 @@ public class Scorer : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (!collision.collider.CompareTag("Ground"))
+        if (collision.gameObject.tag != "Hit")
         {
             hits++;
             Debug.Log("You've collided into things " + hits + " times!");

@@ -28,10 +28,10 @@ public class Mover : MonoBehaviour
 
     void MovePlayer()
     {
+        
         float xVal = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         float zVal = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
-        transform.Translate(xVal, 0, zVal);
+         transform.Translate(xVal, 0, zVal);
     }
-
 }
